@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <!-- Include Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card my-5 mx-auto" style="width: 25rem;">
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                    <p>Welcome, {{ user.username }}!</p>
+                {% endif %}
+
+                <a href="{% url 'signout' %}" class="ps-2 btn btn-primary">SignOut</a>
+            </div>
+
+        </div>
+    </div>
+
+<!-- Include Bootstrap JavaScript via CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
